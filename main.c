@@ -17,7 +17,7 @@ int main()
             {
                 car = getchar();
 
-            }while (car != '\n');
+            } while (car != '\n');
 
             ret = scanf("%d", &N);
             printf("\n");
@@ -29,6 +29,19 @@ int main()
         printf("Tente novamente: ");
         ret = scanf("%d", &N);
         printf("\n");
+
+        while (ret == 0)
+        {
+            printf("Dado(s) Invalido(s). Tente novamente!: ");
+            do
+            {
+                car = getchar();
+
+            } while (car != '\n');
+
+            ret = scanf("%d", &N);
+            printf("\n");
+        }
     }
 
     fat = 0;
@@ -38,7 +51,16 @@ int main()
         fat = fat + calc;
     }
 
-    printf("Fatorial = %d\n", fat);
+    if (fat == 0)
+    {
+        printf("Fatorial = 1");
+        printf("\n");
+    }
+    else
+    {
+        printf("Fatorial = %d", fat);
+        printf("\n");
+    }
 
     return 0;
 }
