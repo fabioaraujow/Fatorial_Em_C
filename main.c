@@ -11,7 +11,7 @@ int main()
     ret = scanf("%lf", &N);
     printf("\n");
 
-    while (ret == 0)
+    while (ret == 0 || N != (int)N)
         {
             printf("Dado(s) Invalido(s). Tente novamente!: ");
             do
@@ -23,37 +23,14 @@ int main()
             ret = scanf("%lf", &N);
             printf("\n");
         }
-
-    while (N != (int)N)
-    {
-        printf("A operacao nao admite numeros fracionarios!\n");
-        printf("Tente novamente: ");
-        ret = scanf("%lf", &N);
-        printf("\n");
-
-        while (ret == 0)
-        {
-            printf("Dado(s) Invalido(s). Tente novamente!: ");
-            do
-            {
-                car = getchar();
-
-            } while (car != '\n');
-
-            ret = scanf("%lf", &N);
-            printf("\n");
-        }
-    }
-
 
     while (N < 0 || N > 15)
     {
-        printf("A calculadora so admite numeros inteiros no intervalo de 0 ate 15!\n");
-        printf("Tente novamente: ");
+        printf("Dado(s) Invalido(s). Tente novamente!: ");
         ret = scanf("%lf", &N);
         printf("\n");
 
-        while (ret == 0)
+        while (ret == 0 || N != (int)N)
         {
             printf("Dado(s) Invalido(s). Tente novamente!: ");
             do
