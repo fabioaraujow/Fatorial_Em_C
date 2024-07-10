@@ -20,13 +20,15 @@ int main()
             }while (car != '\n');
 
             ret = scanf("%d", &N);
+            printf("\n");
         }
 
-    while (N <0 || N > 15)
+    while (N < 0 || N > 15)
     {
         printf("A calculadora so admite numeros inteiros no intervalo de 0 ate 15!\n");
         printf("Tente novamente: ");
         ret = scanf("%d", &N);
+        printf("\n");
     }
 
     fat = 0;
@@ -35,6 +37,7 @@ int main()
         calc = N * (N-(i+1));
         fat = fat + calc;
     }
+
     printf("Fatorial = %d\n", fat);
 
     return 0;
