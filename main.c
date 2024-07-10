@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <conio.h>
 int main()
 {
-    int N, fat, calc, ret;
+    int fat, calc, ret;
+    double N;
     char car;
 
     printf("Insira o valor para o calculo: ");
-    ret = scanf("%d", &N);
+    ret = scanf("%lf", &N);
     printf("\n");
 
     while (ret == 0)
@@ -19,15 +20,15 @@ int main()
 
             } while (car != '\n');
 
-            ret = scanf("%d", &N);
+            ret = scanf("%lf", &N);
             printf("\n");
         }
 
-    while (N < 0 || N > 15)
+    while (N != (int)N)
     {
-        printf("A calculadora so admite numeros inteiros no intervalo de 0 ate 15!\n");
+        printf("A operacao nao admite numeros fracionarios!\n");
         printf("Tente novamente: ");
-        ret = scanf("%d", &N);
+        ret = scanf("%lf", &N);
         printf("\n");
 
         while (ret == 0)
@@ -39,7 +40,29 @@ int main()
 
             } while (car != '\n');
 
-            ret = scanf("%d", &N);
+            ret = scanf("%lf", &N);
+            printf("\n");
+        }
+    }
+
+
+    while (N < 0 || N > 15)
+    {
+        printf("A calculadora so admite numeros inteiros no intervalo de 0 ate 15!\n");
+        printf("Tente novamente: ");
+        ret = scanf("%lf", &N);
+        printf("\n");
+
+        while (ret == 0)
+        {
+            printf("Dado(s) Invalido(s). Tente novamente!: ");
+            do
+            {
+                car = getchar();
+
+            } while (car != '\n');
+
+            ret = scanf("%lf", &N);
             printf("\n");
         }
     }
@@ -48,7 +71,7 @@ int main()
     for (int i = 0; i < N; i++)
     {
         calc = N * (N-(i+1));
-        fat = fat + calc;
+        fat = (int)fat + (int)calc;
     }
 
     if (fat == 0)
