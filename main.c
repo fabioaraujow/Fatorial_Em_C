@@ -3,7 +3,7 @@
 #include <conio.h>
 int main()
 {
-    int fat, calc, ret;
+    long long int fat, ret;
     double N;
     char car;
 
@@ -44,11 +44,10 @@ int main()
         }
     }
 
-    fat = 0;
-    for (int i = 0; i < N; i++)
+    fat = 1;
+    for (int i = N; i > 0; i--)
     {
-        calc = N * (N-(i+1));
-        fat = (int)fat + (int)calc;
+        fat = fat * i;
     }
 
     if (fat == 0)
@@ -58,7 +57,7 @@ int main()
     }
     else
     {
-        printf("Fatorial = %d", fat);
+        printf("Fatorial = %lli", fat);
         printf("\n");
     }
 
